@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#124A44" />
+  <meta name="description" content="五好企康——北大医疗企业员工健康福利平台。企业健康额度、五好生活服务、员工故事与专属权益，一站式管理。" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>五好企康｜北大医疗企业员工健康福利平台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16.2 16.2 21 21"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"/><path d="M10 21h4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H19a1 1 0 0 1 1 1v13H6.5A2.5 2.5 0 0 1 4 16.5v-9Z"/><path d="M4 8h16"/><path d="M16 13h4"/><circle cx="16" cy="13" r="1"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8"/><path d="M12 8v13"/><path d="M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5h4ZM12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5h-4Z"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3"/><path d="M16 4h3a1 1 0 0 1 1 1v3"/><path d="M20 16v3a1 1 0 0 1-1 1h-3"/><path d="M8 20H5a1 1 0 0 1-1-1v-3"/><path d="M7 12h10"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0Z"/><path d="M7 7c0-2 2-2 2-4M12 7c0-2 2-2 2-4M17 7c0-2 2-2 2-4"/><path d="M4 21h16"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C12 4 5 7 5 14a7 7 0 0 0 7 7c7 0 8-8 8-17Z"/><path d="M5 21c2-6 6-9 11-12"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h16a3 3 0 1 1-3 3"/><path d="M3 16h7"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="2"/><rect x="17" y="13" width="4" height="6" rx="2"/><path d="M19 19v1a3 3 0 0 1-3 3h-3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/><path d="M8 7h8M8 10h5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-comment" viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-9 8 9 9 0 0 1-3.4-.7L3 21l1.7-4.4A8 8 0 1 1 21 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="m3 7 5 4 4-7 4 7 5-4-2 12H5L3 7Z"/><path d="M5 19h14"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13"/><path d="M9 21v-5h6v5"/><path d="M12 7v4M10 9h4"/><path d="M3 21h18"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m10 7-5 5 5 5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4V7Z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-avatar-lin" viewBox="0 0 96 96">
+      <circle cx="48" cy="48" r="48" fill="#184F49"/>
+      <circle cx="48" cy="42" r="31" fill="#2A665D"/>
+      <path d="M15 96c2-21 15-34 33-34s31 13 33 34H15Z" fill="#EADFCB"/>
+      <path d="M31 96c1-16 7-27 17-27s16 11 17 27H31Z" fill="#F8F3E8"/>
+      <path d="M41 58h14v12a7 7 0 0 1-14 0V58Z" fill="#E8C0A4"/>
+      <ellipse cx="48" cy="41" rx="18" ry="20" fill="#F3D2B7"/>
+      <ellipse cx="31" cy="44" rx="4" ry="6" fill="#E8BFA3"/>
+      <ellipse cx="65" cy="44" rx="4" ry="6" fill="#E8BFA3"/>
+      <path d="M28 39c-2-16 6-28 20-28 15 0 24 11 21 30-4-1-7-6-9-12-8 8-19 11-32 10Z" fill="#2E2925"/>
+      <path d="M29 34c-3 9-2 16 1 21 2-7 3-14 4-21h-5ZM67 34c3 9 2 16-1 21-2-7-3-14-4-21h5Z" fill="#2E2925"/>
+      <path d="M38 42c2-3 5-4 8-3M58 42c-2-3-5-4-8-3" stroke="#5E4035" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="41" cy="45" rx="1.4" ry="1.8" fill="#3B2A24"/>
+      <ellipse cx="55" cy="45" rx="1.4" ry="1.8" fill="#3B2A24"/>
+      <path d="M48 46v5" stroke="#D8A78D" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M44 54c2.5 2 5.5 2 8 0" stroke="#B86B61" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <circle cx="32.5" cy="51" r="2.2" fill="#D6B36A"/>
+      <circle cx="63.5" cy="51" r="2.2" fill="#D6B36A"/>
+      <path d="M38 69c3 3 7 5 10 5s7-2 10-5" stroke="#D9C8AD" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+    <!-- =====================================================
+         HOME
+         ===================================================== -->
+    <section class="view view-home is-active" data-view="home" id="view-home">
+      <header class="home-hero">
+        <span class="hero-arc arc-one"></span>
+        <span class="hero-arc arc-two"></span>
+        <span class="hero-watermark">五</span>
+
+        <div class="home-topbar">
+          <a class="brand" href="#home" data-nav="home" aria-label="五好企康首页">
+            <span class="brand-seal">五</span>
+            <span class="brand-copy">
+              <b>北大医疗</b>
+              <small>五好企康</small>
+            </span>
+          </a>
+          <div class="top-actions">
+            <button class="top-icon" type="button" data-action="search" aria-label="搜索">
+              <svg class="ic ic-18"><use href="#i-search"/></svg>
+            </button>
+            <button class="top-icon has-dot" type="button" data-action="notifications" aria-label="消息">
+              <svg class="ic ic-18"><use href="#i-bell"/></svg>
+              <i class="notice-dot"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="employee-line">
+          <span class="avatar avatar-sm">
+            <svg viewBox="0 0 96 96" aria-hidden="true"><use href="#i-avatar-lin"/></svg>
+            <i class="avatar-online"></i>
+          </span>
+          <div class="employee-copy">
+            <p><span id="greetTime">下午好</span>，<b>林小满</b></p>
+            <span>星河科技 · 产品设计部</span>
+          </div>
+          <span class="employee-badge">五好体验官</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="hero-kicker">WELLNESS FOR EVERY EMPLOYEE</p>
+          <h1>把日子，<br />过成<span class="gold">五好</span>。</h1>
+          <p class="hero-desc">好好早筛 · 好好吃饭 · 好好运动<br />好好睡觉 · 好好放松</p>
+          <div class="hero-pills">
+            <span>企业专属</span>
+            <span>2026 年度</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="home-main">
+        <section class="section five-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">FIVE WAYS TO LIVE WELL</p>
+              <h2>五好日常</h2>
+            </div>
+            <button class="section-link" type="button" data-go="mall">全部服务 <svg class="ic ic-12"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="five-rail" id="fiveRail"></div>
+        </section>
+
+        <section class="section product-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">CURATED FOR YOU</p>
+              <h2>为你推荐</h2>
+            </div>
+            <span class="head-note">额度优先抵扣</span>
+          </div>
+          <div class="product-rail" id="homeProducts"></div>
+        </section>
+
+        <section class="section journal-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">WUHAO JOURNAL</p>
+              <h2>五好刊物</h2>
+            </div>
+            <button class="section-link" type="button" data-go="discover">全部文章 <svg class="ic ic-12"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div id="homeJournal"></div>
+        </section>
+
+        <section class="network-band">
+          <p class="eyebrow">PKU HEALTHCARE NETWORK</p>
+          <h2>北大医疗服务网络</h2>
+          <p class="network-sub">从健康筛查到就医服务，专业医疗资源就在身边。</p>
+          <div class="city-chips">
+            <span>北京</span><span>天津</span><span>山东</span><span>山西</span><span>湖南</span><span>深圳</span>
+          </div>
+          <div class="network-extra">
+            <span>同一机构 · 企康服务延伸</span>
+            <p>除五好生活外，还可衔接专项深度筛查、就医绿通、企业医务室与职场急救培训等企康服务。</p>
+          </div>
+          <div class="network-footer">
+            <span><svg class="ic ic-14"><use href="#i-shield"/></svg>企业专属健康福利</span>
+            <span><svg class="ic ic-14"><use href="#i-receipt"/></svg>合规开票</span>
+            <span><svg class="ic ic-14"><use href="#i-lock"/></svg>隐私保障</span>
+          </div>
+        </section>
+
+        <section class="quote-card">
+          <span class="quote-mark">“</span>
+          <p>真正的奢华，不是限量名表，也不是新款跑车，而是一觉到天亮的深度睡眠、一天工作后仍充沛的精力、一个没有任何部位在隐隐作痛的身体。</p>
+          <span class="quote-source">北大医疗 · 五好生活</span>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-brand">
+            <span class="brand-seal seal-dark">五</span>
+            <div><b>五好企康</b><small>北大医疗企业员工健康福利平台</small></div>
+          </div>
+          <p>本页面为五好企康服务展示，具体权益、额度与兑换规则以企业配置为准。<br />医疗服务由北大医疗提供。</p>
+          <small>© 北大医疗 PKU HEALTHCARE · 中国平安集团成员</small>
+        </footer>
+      </main>
+    </section>
+
+    <!-- =====================================================
+         MALL
+         ===================================================== -->
+    <section class="view view-mall" data-view="mall" id="view-mall" hidden>
+      <header class="page-header mall-header">
+        <div class="page-topline">
+          <p class="eyebrow">WUHAO SELECT</p>
+          <button class="quota-pill" type="button" data-go="me">
+            可用额度 <b data-quota-available-full>¥1,714.00</b>
+            <svg class="ic ic-13"><use href="#i-chev-right"/></svg>
+          </button>
+        </div>
+        <h1>五好商城</h1>
+        <p class="page-sub">把健康额度，花在真正重要的地方。</p>
+        <button class="mall-search-bar" type="button" data-action="search">
+          <svg class="ic ic-17"><use href="#i-search"/></svg>
+          <span>搜索商品、服务或文章</span>
+          <i>搜索</i>
+        </button>
+      </header>
+
+      <div class="mall-sticky">
+        <div class="filter-tabs" id="mallCats" role="tablist" aria-label="商品分类"></div>
+        <div class="mall-subrow">
+          <span class="mall-count" id="mallCount">共 12 件好物与服务</span>
+          <div class="mall-filters" id="mallFilters" role="group" aria-label="兑换方式筛选">
+            <button class="mini-filter is-active" type="button" data-mall-filter="all">全部</button>
+            <button class="mini-filter" type="button" data-mall-filter="full">可全额兑换</button>
+            <button class="mini-filter" type="button" data-mall-filter="partial">需补差</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <div class="mall-tip">
+        <svg class="ic ic-14"><use href="#i-info"/></svg>
+        商品价格高于可用额度时，可使用“额度抵扣 + 个人补差”的方式兑换。
+      </div>
+      <footer class="simple-footer">北大医疗 · 五好企康</footer>
+    </section>
+
+    <!-- =====================================================
+         DISCOVER / JOURNAL
+         ===================================================== -->
+    <section class="view view-discover" data-view="discover" id="view-discover" hidden>
+      <header class="page-header discover-header">
+        <div class="page-topline">
+          <p class="eyebrow">WUHAO JOURNAL</p>
+          <span class="editorial-badge">编辑部精选</span>
+        </div>
+        <h1>五好刊物</h1>
+        <p class="page-sub">为员工精选的健康生活杂志。</p>
+      </header>
+
+      <div id="discoverFeature"></div>
+
+      <div class="journal-toolbar">
+        <div class="filter-tabs" id="articleCats" role="tablist" aria-label="文章分类"></div>
+      </div>
+
+      <div class="article-list" id="articleList"></div>
+      <footer class="simple-footer">五好刊物 · 编辑部精选</footer>
+    </section>
+
+    <!-- =====================================================
+         ME
+         ===================================================== -->
+    <section class="view view-me" data-view="me" id="view-me" hidden>
+      <header class="profile-hero">
+        <span class="profile-arc"></span>
+        <div class="profile-topline">
+          <p class="eyebrow light">MY WUHAO</p>
+          <button class="profile-more" type="button" data-action="notifications" aria-label="消息">
+            <svg class="ic ic-18"><use href="#i-bell"/></svg>
+          </button>
+        </div>
+
+        <div class="profile-main">
+          <span class="avatar avatar-lg">
+            <svg viewBox="0 0 96 96" aria-hidden="true"><use href="#i-avatar-lin"/></svg>
+            <i class="avatar-online"></i>
+          </span>
+          <div class="profile-copy">
+            <p>星河科技 · 产品设计部</p>
+            <h1>林小满</h1>
+            <span>工号 PKU-02317 · 五好体验官 Lv.3</span>
+          </div>
+        </div>
+
+        <div class="profile-stats">
+          <div><b data-stat-redeems>3</b><span>已兑换</span></div>
+          <div><b data-stat-benefits>5</b><span>可用权益</span></div>
+          <div><b>86</b><span>五好值</span></div>
+        </div>
+      </header>
+
+      <main class="me-main">
+        <div class="me-quota-wrap">
+          <section class="quota-card" aria-label="企业健康额度">
+            <span class="quota-shine"></span>
+            <div class="quota-head">
+              <span class="quota-label"><i></i>企业健康额度</span>
+              <button class="text-link" type="button" data-action="quota-info">额度说明 <svg class="ic ic-12"><use href="#i-chev-right"/></svg></button>
+            </div>
+            <div class="quota-value">
+              <span>¥</span><b data-quota-available>1,714</b><small>.00</small>
+            </div>
+            <div class="quota-subline">
+              <span>年度总额度 <b data-quota-total>¥3,000</b></span>
+              <span>已使用 <b data-quota-used>¥1,286</b></span>
+            </div>
+            <div class="quota-track"><i data-quota-progress style="width:57.1%"></i></div>
+            <div class="quota-bottom">
+              <div class="quota-company">
+                <span class="company-chip">星河科技</span>
+                <small>有效期至 2026.12.31</small>
+              </div>
+              <div class="quota-buttons">
+                <button class="btn btn-ghost btn-sm" type="button" data-subpage="ledger">使用明细</button>
+                <button class="btn btn-primary btn-sm" type="button" data-go="mall">去兑换 <svg class="ic ic-13"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+            <span class="quota-watermark">¥</span>
+          </section>
+        </div>
+
+        <div id="myHealthCard"></div>
+
+        <button class="health-reminder" type="button" data-subpage="reports">
+          <span class="reminder-dot"></span>
+          <span class="health-reminder-copy">
+            <b>本月健康提醒</b>
+            <small>年度体检待预约 · 睡眠复查 11.20</small>
+          </span>
+          <svg class="ic ic-14"><use href="#i-chev-right"/></svg>
+        </button>
+
+        <div id="myMenu"></div>
+
+        <div class="service-card">
+          <span class="service-icon"><svg class="ic ic-22"><use href="#i-headset"/></svg></span>
+          <div>
+            <b>企业专属健康管家</b>
+            <p>关于额度、权益与兑换，随时为你解答。</p>
+          </div>
+          <button class="service-btn" type="button" data-action="service">联系</button>
+        </div>
+
+        <footer class="simple-footer">五好企康 · 让健康成为日常</footer>
+      </main>
+    </section>
+
+    <!-- =====================================================
+         MY SUBPAGES
+         ===================================================== -->
+    <section class="view view-subpage" data-view="subpage" id="view-subpage" hidden>
+      <header class="subpage-header">
+        <button class="subpage-back" type="button" data-action="subpage-back" aria-label="返回我的">
+          <svg class="ic ic-20"><use href="#i-arrow-left"/></svg>
+        </button>
+        <div>
+          <p class="eyebrow" id="subpageEyebrow">MY WUHAO</p>
+          <h1 id="subpageTitle">权益</h1>
+        </div>
+        <span class="subpage-spacer"></span>
+      </header>
+      <main class="subpage-content" id="subpageContent"></main>
+      <footer class="simple-footer">五好企康 · 让健康成为日常</footer>
+    </section>
+
+    <nav class="tabbar" aria-label="底部导航">
+      <button class="tab is-active" type="button" data-nav="home" aria-current="page">
+        <span class="tab-icon"><svg class="ic ic-21"><use href="#i-home"/></svg></span>
+        <span>首页</span>
+      </button>
+      <button class="tab" type="button" data-nav="mall">
+        <span class="tab-icon"><svg class="ic ic-21"><use href="#i-bag"/></svg></span>
+        <span>商城</span>
+      </button>
+      <button class="tab" type="button" data-nav="discover">
+        <span class="tab-icon"><svg class="ic ic-21"><use href="#i-book"/></svg></span>
+        <span>发现</span>
+      </button>
+      <button class="tab" type="button" data-nav="me">
+        <span class="tab-icon"><svg class="ic ic-21"><use href="#i-user"/></svg></span>
+        <span>我的</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <section class="sheet" id="sheet" aria-hidden="true" aria-label="详情">
+    <span class="sheet-grab"></span>
+    <button class="sheet-close" id="sheetClose" type="button" aria-label="关闭">
+      <svg class="ic ic-16"><use href="#i-close"/></svg>
+    </button>
+    <div class="sheet-content" id="sheetContent"></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
